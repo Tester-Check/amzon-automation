@@ -1,7 +1,7 @@
 package com.amzon.cases;
 
-import com.amzon.pages.FirstPage;
-import com.amzon.pages.SecondPage;
+import com.amzon.pages.ProductSearchPage;
+import com.amzon.pages.ProductResultsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,21 +42,21 @@ public class FirstTest {
     @Test
     public void test1() throws InterruptedException {
 
-        FirstPage firstPage = new FirstPage(driver);
+        ProductSearchPage productSearchPage = new ProductSearchPage(driver);
 
-        firstPage.enterInSearchField("2021 apple macbook pro");
-        firstPage.clickOnSearchResult();
-        firstPage.clickOnProductLink();
+        productSearchPage.enterInSearchField("2021 apple macbook pro");
+        productSearchPage.clickOnSearchResult();
+        productSearchPage.clickOnProductLink();
 
-        SecondPage secondPage = new SecondPage(driver);
+        ProductResultsPage productResultsPage = new ProductResultsPage(driver);
 
-        Assert.assertEquals(secondPage.getTitleText(),
+        Assert.assertEquals(productResultsPage.getTitleText(),
                 "Macbook Pro 14 inch Screen Protector Privacy 2022-2021, " +
                         "FILMEXT Removable MacBook pro 14 Privacy Screen Filter for MacBook Pro 14 inch M1 " +
                         "2021 (A2442),Anti-Spy/Anti-Glare/Bubble Free/Easy On/Off");
 
-        secondPage.clickOnAddToCart();
-        Assert.assertEquals(secondPage.getCartCount(), "1");
+        productResultsPage.clickOnAddToCart();
+        Assert.assertEquals(productResultsPage.getCartCount(), "1");
 
 
     }

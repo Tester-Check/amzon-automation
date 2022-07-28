@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SecondPage {
+public class ProductResultsPage {
     public WebDriver driver;
     @FindBy(xpath="//h1[@id='title']")
     private WebElement title;
@@ -20,7 +20,7 @@ public class SecondPage {
     @FindBy(id="nav-cart-count")
     private WebElement cartCount;
 
-    public SecondPage(WebDriver driver){
+    public ProductResultsPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FirstPage {
+public class ProductSearchPage {
     public WebDriver driver;
     @FindBy(id="twotabsearchtextbox")
     private WebElement searchField;
@@ -22,7 +22,7 @@ public class FirstPage {
     private WebElement linkProMax13;
 
 
-    public FirstPage(WebDriver driver){
+    public ProductSearchPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
